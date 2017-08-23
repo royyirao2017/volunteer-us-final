@@ -7,11 +7,12 @@ class EventsController < ApplicationController
 
 
   def show
+    @event = Event.find(params[:id])
+
     if user_signed_in?
       @user_confirmed = @event.volunteer_applications.where("user_id = ? AND confirmed = ?", current_user.id, true)
       @user_registered = current_user.volunteer_applications.find_by(event_id: @event.id)
     end
-    @event = Event.find(params[:id])
   end
 
   def new
