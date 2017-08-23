@@ -20,7 +20,7 @@
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Dashboard") %>
+                <i class="fa fa-compass"></i>  <%= t(".profile", default: "Dashboard") %>
               <% end %>
             </li>
             <li>
@@ -33,7 +33,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Sign Up/Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Sign Up / Login"), new_user_session_path, class: "btn btn-success" %>
     <% end %>
   </div>
 
