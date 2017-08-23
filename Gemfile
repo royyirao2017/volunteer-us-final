@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 ruby '2.3.4'
 
 gem 'devise'
@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem "omniauth-wechat-oauth2"
 
 group :development do
   gem "letter_opener"
