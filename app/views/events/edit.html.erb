@@ -1,14 +1,2 @@
-<h1>Events#edit</h1>
-
-<p>Find me in app/views/events/new.html.erb</p>
-
-<p>
-  Event name:
-  Event date:
-  Event location:
-  Number of volunteer neeeded:
-  Event description:
-  Category:
-</p>
-
- <%= link_to "Save the changes", event_path(id: 1), method: :put %>
+<h1>Edit Your Event</h1>
+<%= render "layouts/event-form" %>

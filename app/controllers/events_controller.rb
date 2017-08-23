@@ -1,18 +1,42 @@
 class EventsController < ApplicationController
 
   #this shows the list of volunteers for an event
+  def index
+    @events = Event.all
+  end
+
+
   def show
+    if user_signed_in?
+      @user_confirmed = @event.volunteer_applications.where("user_id = ? AND confirmed = ?", current_user.id, true)
+      @user_registered = current_user.volunteer_applications.find_by(event_id: @event.id)
+    end
+    @event = Event.find(params[:id])
   end
 
   def new
+    @event = Event.new
   end
 
   #this create a new event
   def create
+    @event = Event.new(event_params)
+    @event.user = current_user
+    if @event.save
+
+      puts "save @event #{@event.errors.inspect}"
+
+      redirect_to dashboard_index_path(@event)
+    else
+
+      puts "failed @event #{@event.errors.inspect}"
+      render :new
+    end
   end
 
   #show the edit form
   def edit
+
   end
 
   #submit the edit form
@@ -26,6 +50,17 @@ class EventsController < ApplicationController
 
   #you can delete the event
   def unpublish
+  end
+
+  private
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
+  def event_params
+    # These params are required to create an event in event/new view
+    params.require(:event).permit(:title, :date, :location, :category, :volunteer_number)
   end
 
 end
