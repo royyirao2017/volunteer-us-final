@@ -7,9 +7,16 @@
   <thead>
     <tr>
       <th>
-        Name
+       #
       </th>
       <th>
+       Name
+      </th>
+      <th>
+      Status
+      </th>
+      <th>
+       Action
       </th>
     </tr>
   </thead>
@@ -17,10 +24,17 @@
   <tbody>
     <tr>
       <td>
+        1
+      </td>
+      <td>
         Eddie Lau
       </td>
       <td>
+       Confirmed
+      </td>
+      <td>
         <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: 1, volunteer_application_id: 1), method: :put %>
+        <%= link_to "Pending", event_volunteer_application_pending_path(event_id: 1, volunteer_application_id: 1), method: :put %>
         <%= link_to "Decline", event_volunteer_application_decline_path(event_id: 1, volunteer_application_id: 1), method: :put %>
       </td>
     </tr>

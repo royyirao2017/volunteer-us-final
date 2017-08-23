@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   resources :events do
     resources :volunteer_applications do
       put 'confirm'
+      put 'pending'
       put 'decline'
     end
   end
   resources :dashboard, only: [:index]
-  resources :profile, only: [:show :edit :update]
+  resource :profile, only: [:show, :edit, :update]
 end
