@@ -1,0 +1,32 @@
+<h1>Events#show</h1>
+
+
+<h2>Volunteers</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Eddie Lau
+      </td>
+      <td>
+        <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: 1, volunteer_application_id: 1), method: :put %>
+        <%= link_to "Decline", event_volunteer_application_decline_path(event_id: 1, volunteer_application_id: 1), method: :put %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+ <%= link_to "Go back to dashboard", dashboard_index_path %>
+
+

@@ -17,6 +17,7 @@ class EventsController < ApplicationController
 
   #submit the edit form
   def update
+    redirect_to dashboard_index_path
   end
 
   #this one can be seen by other people

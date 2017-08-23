@@ -1,0 +1,29 @@
+<h1>Dashboard#index</h1>
+
+<h2>The events you created</h2>
+
+ <%= link_to "event", event_path(id: 1)%>
+
+ <table class="table">
+  <thead>
+    <tr>
+      <th>
+        Event Name
+      </th>
+      <th>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Startup Grind
+      </td>
+      <td>
+        <%= link_to "Edit ", edit_event_path(id: 1) %>
+        <%= link_to "Volunteer Status", event_path(id: 1) %>
+      </td>
+    </tr>
+  </tbody>
+</table>

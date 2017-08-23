@@ -9,4 +9,6 @@ Rails.application.routes.draw do
       put 'decline'
     end
   end
+  resources :dashboard, only: [:index]
+
 end

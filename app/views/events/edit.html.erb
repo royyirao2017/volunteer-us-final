@@ -1,4 +1,4 @@
-<h1>Events#new</h1>
+<h1>Events#edit</h1>
 
 <p>Find me in app/views/events/new.html.erb</p>
 
@@ -11,4 +11,4 @@
   Category:
 </p>
 
- <%= link_to "Submit", dashboard_index_path %>
+ <%= link_to "Save the changes", event_path(id: 1), method: :put %>
