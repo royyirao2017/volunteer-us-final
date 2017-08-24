@@ -3,6 +3,14 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resource :profile
+      resources :users
+    end
+  end
+
   resources :events do
     resources :volunteer_applications do
       put 'confirm'
