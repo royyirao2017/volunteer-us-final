@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   #this shows the list of volunteers for an event
   def index
@@ -17,12 +19,14 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    # @event.title ||= params[:title]
   end
 
   #this create a new event
   def create
     @event = Event.new(event_params)
-    @event.user = current_user
+    # @event.user = current_user
+
     if @event.save
 
       puts "save @event #{@event.errors.inspect}"

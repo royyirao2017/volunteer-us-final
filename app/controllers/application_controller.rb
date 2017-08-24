@@ -4,7 +4,14 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource_or_scope)
-    new_event_path
+    dashboard_index_path
+  end
+
+  private
+
+  # If your model is called User
+  def after_sign_in_path_for(resource)
+    session["user_return_to"] || root_path
   end
 
   protected
