@@ -1,4 +1,11 @@
-<h1>Events#show</h1>
+<h1><%= @event.title %></h1>
+      <p>Date & Time: <%= @event.date %></p>
+      <p>Location: <%= @event.location %></p>
+      <p>Type: <%= @event.category.capitalize %></p>
+      <p>Volunteers: <%= @event.volunteer_number %></p>
+      <p>Organizer: <%= @event.user.name %></p>
+      <%= link_to "Edit", edit_event_path(@event) %>
+      <%= link_to "Delete", event_path(@event), method: "delete" %>
 
 
 <h2>Volunteers</h2>

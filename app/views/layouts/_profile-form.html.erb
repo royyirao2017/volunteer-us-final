@@ -1,0 +1,10 @@
+<%= simple_form_for @profile, url: profile_path, method: :put do |f|%>
+  <%= f.input :name %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :phone_number%>
+  <%= f.input :email %>
+  <%= f.input :location %>
+
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>
