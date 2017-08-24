@@ -38,11 +38,19 @@ class EventsController < ApplicationController
   #show the edit form
   def edit
 
+    @event = Event.find(params[:id])
   end
 
   #submit the edit form
   def update
-    redirect_to dashboard_index_path
+    @event = Event.new(event_params)
+    @event.user = current_user
+    if @event.update(event_params)
+      redirect_to event_path(@event)
+    else
+      render :edit
+    end
+
   end
 
   #this one can be seen by other people
@@ -51,6 +59,12 @@ class EventsController < ApplicationController
 
   #you can delete the event
   def unpublish
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to dashboard_index_path
   end
 
   private
