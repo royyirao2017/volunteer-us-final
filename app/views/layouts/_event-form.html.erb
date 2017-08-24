@@ -1,0 +1,10 @@
+<%= simple_form_for @event do |f|%>
+  <%= f.input :title %>
+  <%= f.input :date %>
+  <%= f.input :location %>
+  <%= f.input :volunteer_number %>
+  <%= f.input :category, collection: Event::CATEGORY %>
+  <%= f.button :submit, class: "btn btn-success" %>
+
+<% end %>
+
