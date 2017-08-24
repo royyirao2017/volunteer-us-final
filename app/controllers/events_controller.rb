@@ -37,13 +37,12 @@ class EventsController < ApplicationController
 
   #show the edit form
   def edit
-
-    @event = Event.find(params[:id])
+     @event = Event.find(params[:id])
   end
 
   #submit the edit form
   def update
-    @event = Event.new(event_params)
+    @event = Event.find(params[:id])
     @event.user = current_user
     if @event.update(event_params)
       redirect_to event_path(@event)
