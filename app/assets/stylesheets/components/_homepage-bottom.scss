@@ -1,0 +1,35 @@
+.icon {
+  height: 97px;
+  width: 97px;
+  margin-left: 100px;
+  margin-top: 30px;
+  color: #2DB94D !important;
+}
+
+.homepage-bottom h2 {
+  margin-left: 60px;
+  color: #2DB94D;
+}
+
+.homepage-bottom p {
+  margin-left: 40px;
+  color: #2DB94D;
+}
+
+.SignUp {
+  height: 30%;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  color: white;
+  text-align: center;
+}
+
+.SignUp h2 {
+  padding-top: 16px;
+  color: white;
+}
+
+.SignUp .btn-default {
+  color: #2DB94D;
+  font-weight: bold;
+}
