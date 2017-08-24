@@ -2,8 +2,7 @@
 
 <h2>The events you created</h2>
 
- <%= link_to "event", event_path(id: 1)%>
-
 <% @events.each do |event| %>
   <p><%= link_to event.title, event_path(event) %></p>
+
 <% end %>
