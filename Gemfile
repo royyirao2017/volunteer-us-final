@@ -18,6 +18,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem "omniauth-wechat-oauth2"
 
+# API
+gem 'simple_token_authentication', '~> 1.0' # see semver.org
+gem 'rest-client'
+
 group :development do
   gem "letter_opener"
 end
