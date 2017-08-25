@@ -1,22 +1,26 @@
-<div class="container">
-  <div class="event-form-container">
-    <h2>Create Your Event</h2>
+<div class="banner-container">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "together2.jpg" %>');">
+  <div class="container">
+    <div class="event-form-container">
+      <h2>Create Your Event</h2>
 
-    <div class="row">
-     <div class="col-xs-12">
-         <%= simple_form_for @event do |f|%>
-         <div class="form-inputs">
-           <%= f.input :title %>
-           <%= f.input :date %>
-           <%= f.input :location %>
-           <%= f.input :volunteer_number %>
-           <%= f.input :category, collection: Event::CATEGORY %>
-         </div>
+      <div class="row">
+       <div class="col-xs-12">
+           <%= simple_form_for @event do |f|%>
+           <div class="form-inputs">
+             <%= f.input :title %>
+             <%= f.input :date %>
+             <%= f.input :location %>
+             <%= f.input :volunteer_number %>
+             <%= f.input :category, collection: Event::CATEGORY %>
+           </div>
 
-         <div class="form-actions text-center">
-           <%= f.button :submit, "Finished",class: "btn btn-default btn-md", style:"color: #2DB94D; font-weight: bold; width: 40%;" %>
-         </div>
-       <% end %>
+           <div class="form-actions text-center">
+             <%= f.button :submit, "Finished",class: "btn btn-default btn-md", style:"color: #2DB94D; font-weight: bold; width: 40%;" %>
+           </div>
+         <% end %>
+       </div>
      </div>
    </div>
- </div>
+  </div>
+</div>
