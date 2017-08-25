@@ -1,53 +1,57 @@
-<h1><%= @event.title %></h1>
-      <p>Date & Time: <%= @event.date %></p>
-      <p>Location: <%= @event.location %></p>
-      <p>Type: <%= @event.category.capitalize %></p>
-      <p>Volunteers: <%= @event.volunteer_number %></p>
-      <p>Organizer: <%= @event.user.name %></p>
-      <%= link_to "Edit", edit_event_path(@event) %>
-      <%= link_to "Delete", event_path(@event), method: "delete" %>
+<div class="banner-container">
+ <div class="login-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "together2.jpg" %>');">
+   <div class="banner-content">
+   <h1><%= @event.title %></h1>
+   <p>Date & Time: <%= @event.date %></p>
+   <p>Location: <%= @event.location %></p>
+   <p>Type: <%= @event.category.capitalize %></p>
+   <p>Volunteers: <%= @event.volunteer_number %></p>
+   <p>Organizer: <%= @event.user.name %></p>
+   <%= link_to "Edit", edit_event_path(@event) %>
+   <%= link_to "Delete", event_path(@event), method: "delete" %>
 
+    <h2>Volunteers</h2>
 
-<h2>Volunteers</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+           #
+          </th>
+          <th>
+           Name
+          </th>
+          <th>
+          Status
+          </th>
+          <th>
+           Action
+          </th>
+        </tr>
+      </thead>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>
-       #
-      </th>
-      <th>
-       Name
-      </th>
-      <th>
-      Status
-      </th>
-      <th>
-       Action
-      </th>
-    </tr>
-  </thead>
+      <tbody>
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            Eddie Lau
+          </td>
+          <td>
+           Confirmed
+          </td>
+          <td>
+            <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: 1, volunteer_application_id: 1), method: :put %>
+            <%= link_to "Pending", event_volunteer_application_pending_path(event_id: 1, volunteer_application_id: 1), method: :put %>
+            <%= link_to "Decline", event_volunteer_application_decline_path(event_id: 1, volunteer_application_id: 1), method: :put %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-  <tbody>
-    <tr>
-      <td>
-        1
-      </td>
-      <td>
-        Eddie Lau
-      </td>
-      <td>
-       Confirmed
-      </td>
-      <td>
-        <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-        <%= link_to "Pending", event_volunteer_application_pending_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-        <%= link_to "Decline", event_volunteer_application_decline_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
- <%= link_to "Go back to dashboard", dashboard_index_path %>
+    <%= link_to "Go back to dashboard", dashboard_index_path %>
+  </div>
+</div>
 
 
