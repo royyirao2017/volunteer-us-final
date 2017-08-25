@@ -27,15 +27,26 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
 
-    if @event.save
+    # Check to see if the user is registered/logged in
+    if current_user.nil?
+     # Store the form data in the session so we can retrieve it after login
+     Thread.current[:event_params] = event_params.dup
+     p Thread.current[:event_params]
 
-      puts "save @event #{@event.errors.inspect}"
-
-      redirect_to dashboard_index_path(@event)
+     # Redirect the user to register/login
+     redirect_to new_user_registration_path
     else
+      if @event.save
 
-      puts "failed @event #{@event.errors.inspect}"
-      render :new
+        puts "save @event #{@event.errors.inspect}"
+
+        redirect_to dashboard_index_path(@event)
+      else
+
+        puts "failed @event #{@event.errors.inspect}"
+
+        render :new
+      end
     end
   end
 
@@ -56,13 +67,13 @@ class EventsController < ApplicationController
 
   end
 
-  #this one can be seen by other people
-  def publish
-  end
+  # #this one can be seen by other people
+  # def publish
+  # end
 
-  #you can delete the event
-  def unpublish
-  end
+  # #you can delete the event
+  # def unpublish
+  # end
 
   def destroy
     @event = Event.find(params[:id])

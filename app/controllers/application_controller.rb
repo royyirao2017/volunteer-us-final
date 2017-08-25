@@ -3,15 +3,29 @@ class ApplicationController < ActionController::Base
   # before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def after_sign_in_path_for(resource_or_scope)
-    dashboard_index_path
-  end
+  # def after_sign_in_path_for(resource_or_scope)
+  #   dashboard_index_path
+  # end
 
-  private
+  # private
 
   # If your model is called User
   def after_sign_in_path_for(resource)
-    session["user_return_to"] || root_path
+    p Thread.current[:event_params]
+
+    if Thread.current[:event_params].present?
+
+      # save list
+      @event = current_user.events.create!(Thread.current[:event_params])
+
+      # clear session
+      # session[:event] = nil
+      Thread.current[:event_params] = nil
+
+      dashboard_index_path(@event)
+    else
+      dashboard_index_path
+    end
   end
 
   protected

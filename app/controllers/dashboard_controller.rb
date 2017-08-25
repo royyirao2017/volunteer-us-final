@@ -1,7 +1,6 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
   def index
-    @events = Event.all
+    @events = current_user.events
   end
-
 end
