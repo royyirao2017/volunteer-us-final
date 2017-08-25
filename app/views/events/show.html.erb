@@ -6,7 +6,7 @@
    <p>Location: <%= @event.location %></p>
    <p>Type: <%= @event.category.capitalize %></p>
    <p>Volunteers: <%= @event.volunteer_number %></p>
-   <p>Organizer: <%= @event.user.name %></p>
+   <p>Organizer: <%= @event.user.try(:name) %></p>
    <%= link_to "Edit", edit_event_path(@event) %>
    <%= link_to "Delete", event_path(@event), method: "delete" %>
 

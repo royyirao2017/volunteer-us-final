@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy], raise: false
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   #this shows the list of volunteers for an event
