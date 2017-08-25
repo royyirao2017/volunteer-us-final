@@ -9,4 +9,10 @@ class Api::V1::EventsController < Api::V1::BaseController
   def index
     render json: Event.all
   end
+
+  def show
+    @event = Event.find(params[:id])
+    render json: @event
+  end
+
 end
