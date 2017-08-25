@@ -10,7 +10,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def create
     code = params[:code]
-    @user = User.find_by_email(wechat_email(code)) || User.create!(user_params(code))
+    @user = User.find_by_email(wechat_email(code).downcase) || User.create!(user_params(code))
     render json: @user
   end
 
