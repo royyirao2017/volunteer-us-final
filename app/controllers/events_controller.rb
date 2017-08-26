@@ -18,7 +18,11 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
+    if current_user
+      @event = Event.new
+    else
+      redirect_to new_user_registration_path
+    end
     # @event.title ||= params[:title]
   end
 
