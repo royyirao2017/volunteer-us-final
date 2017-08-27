@@ -22,6 +22,11 @@ gem "omniauth-wechat-oauth2"
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
 gem 'rest-client'
 
+# deployment
+gem 'mina', '< 1', require: false
+gem 'mina-rsync', require: false
+gem 'mina-scp', require: false
+
 group :development do
   gem "letter_opener"
 end
