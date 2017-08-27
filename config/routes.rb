@@ -6,9 +6,14 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resource :profile
+      resource :profile # get /profile
       resources :users
+
+      get 'user/events', to: 'volunteer_applications#index', as: 'api_v1_user_events'
+
       resources :events
+
+      post 'events/:event_id/actions/apply', to: 'volunteer_applications#create', as: 'api_v1_apply'
     end
   end
 
