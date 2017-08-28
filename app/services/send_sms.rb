@@ -13,7 +13,8 @@ class SendSMS
 end
 
 
-# 【有志者】亲爱的#name#，您申请成为#event#的志愿者已成功通过审核。有志者助力您事业成功。
-# 【有志者】亲爱的#name#，您申请成为#event#的志愿者未通过审核。请申请其他活动机会。
+# SUCCESFUL APPLICATION【有志者】亲爱的#name#，您申请成为#event#的志愿者已成功通过审核。有志者助力您事业成功。
 
-# 【有志者】亲爱的 Forrest，您申请成为 crazy gaming night 的志愿者已成功通过审核。有志者助力您事业成功。
+# REJECTED APPLICATION【有志者】亲爱的#name#，您申请成为#event#的志愿者未通过审核。请申请其他活动机会。
+
+# ACCEPTED APPLICATION【有志者】亲爱的 Forrest，您申请成为 crazy gaming night 的志愿者已成功通过审核。有志者助力您事业成功。
