@@ -4,6 +4,9 @@
    <h1><%= @event.title %></h1>
    <p>Date & Time: <%= @event.date %></p>
    <p>Location: <%= @event.location %></p>
+   <!-- CSS needed in the event show page -->
+   <p><%= image_tag @event.poster  %></p>
+
    <p>Type: <%= @event.category.capitalize %></p>
    <p>Volunteers: <%= @event.volunteer_number %></p>
    <p>Organizer: <%= @event.user.try(:name) %></p>
