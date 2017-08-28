@@ -93,7 +93,7 @@ class EventsController < ApplicationController
 
   def event_params
     # These params are required to create an event in event/new view
-    params.require(:event).permit(:title, :date, :location, :category, :volunteer_number)
+    params.require(:event).permit(:title, :date, :poster, :location, :category, :volunteer_number)
   end
 
 end

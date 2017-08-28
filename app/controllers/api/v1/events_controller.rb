@@ -14,5 +14,4 @@ class Api::V1::EventsController < Api::V1::BaseController
     @event = Event.find(params[:id])
     render json: @event
   end
-
 end

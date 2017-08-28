@@ -7,21 +7,25 @@ class Api::V1::VolunteerApplicationsController < Api::V1::BaseController
 
   def create
     # Creates a new volunteer application
-
+    # event
     @volunteer_applicaton = VolunteerApplication.new(volunteer_application_params)
-    @volunteer_applicaton.user = current_user
-    @volunteer_applicaton.save!
+
+    if VolunteerApplication.exists?(user: current_user, event_id: params[:event_id])
+      puts "You're already applied to this event"
+    else
+      @volunteer_applicaton.user = current_user
+      @volunteer_applicaton.save!
+    end
 
     # Status defaults to "Pending"
-    # Adds event instance to Volunteer dashboard, with status
 
-    # Adds volunteer profile to event organizer dashboard
+    # Adds event instance to Volunteer dashboard, with status
 
     render json: @volunteer_applicaton
   end
 
   def index
-    @events = VolunteerApplication.where(@user == current_user).map(&:event)
+    @events = VolunteerApplication.where(user: current_user).map(&:event)
     render json: @events
   end
 
