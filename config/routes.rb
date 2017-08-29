@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
       get 'user/events', to: 'volunteer_applications#index', as: 'api_v1_user_events'
 
-      resources :events
+      resources :events do
+        collection do
+          get 'featured', to: 'events#featured', as: 'api_v1_events_featured'
+        end
+      end
 
       post 'events/:event_id/actions/apply', to: 'volunteer_applications#create', as: 'api_v1_apply'
     end

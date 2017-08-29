@@ -7,11 +7,18 @@ class Api::V1::EventsController < Api::V1::BaseController
   # after_action :verify_authorized, except: [:index, :create]
 
   def index
-    render json: Event.all
+
+    puts "index"
+    puts "Event #{Event.all.inspect}"
+    render :ok, json: Event.all
   end
 
   def show
     @event = Event.find(params[:id])
-    render json: @event
+    render :ok, json: @event
+  end
+
+  def featured
+    render :ok, json: Event.where(featured: true)
   end
 end
