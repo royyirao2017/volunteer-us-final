@@ -1,1 +1,0 @@
-featured_events_controller.rb
