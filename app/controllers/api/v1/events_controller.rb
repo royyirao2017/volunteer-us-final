@@ -15,7 +15,12 @@ class Api::V1::EventsController < Api::V1::BaseController
 
   def show
     @event = Event.find(params[:id])
-    render :ok, json: @event
+
+    if application = VolunteerApplication.find_by(user: current_user, event: @event)
+      render :ok, json: application
+    else
+      render :ok, json: @event
+    end
   end
 
   def featured

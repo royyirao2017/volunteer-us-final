@@ -25,8 +25,8 @@ class Api::V1::VolunteerApplicationsController < Api::V1::BaseController
   end
 
   def index
-    @events = VolunteerApplication.where(user: current_user).map(&:event)
-    render json: @events
+    @events = VolunteerApplication.where(user: current_user)#.map(&:event)
+    render json: @events # event.to_json # event.as_json
   end
 
   private
