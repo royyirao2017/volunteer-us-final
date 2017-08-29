@@ -1,5 +1,5 @@
 class VolunteerApplication < ApplicationRecord
-  STATUS = ["Declined", "Pending", "Accepted"]
+  # STATUS = ["Declined", "Pending", "Accepted"]
 
   include AASM
 
@@ -21,5 +21,7 @@ class VolunteerApplication < ApplicationRecord
   belongs_to :user
   belongs_to :event
 
-
+  def as_json(option)
+    event.as_json(option).merge({ status: status })
+  end
 end
