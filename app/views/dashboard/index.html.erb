@@ -1,14 +1,39 @@
-<div class="main-content-container">
- <h1>Welcome to your Dashboard</h1>
- <div class="row">
-   <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-     <%= link_to t(" new_event_url", default: "Create New Event"),new_event_url, class: "btn btn-success btn-lg" %>
-   </div>
-   <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-     <h2>Events Created:</h2>
-     <% @events.each do |event| %>
-       <p><%= link_to event.title, event_path(event) %></p>
-     <% end %>
-   </div>
- </div>
+<div class="dashboard-container">
+  <h3>Your Events</h3>
+  <div class="dashbaord-events">
+
+    <div class="row">
+      <% @events.each do |event| %>
+        <div class="col-md-4">
+          <%= link_to event_path(event) do %>
+            <div class="panel panel__dashboard-event">
+              <div class="panel-body">
+                <div class="event-poster">
+                  <%= image_tag event.poster || 'http://placehold.it/200x200' %>
+                </div>
+                <div class="event-name" style="color: #2DB94D;">
+                  <%= event.title %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="col-md-4">
+        <%= link_to new_event_url do %>
+          <div class="panel panel__dashboard-event panel__dashboard--event-new">
+            <div class="panel-body">
+              <div>
+                <%= image_tag "create-icon.png", class: "icon-new" %>
+              </div>
+              <div class="info">
+                <div style="color: #2DB94D;">Create A New Event</div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
