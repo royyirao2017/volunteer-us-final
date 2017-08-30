@@ -1,65 +1,79 @@
-<div class="main-content-container">
-  <h1><%= @event.title %></h1>
+<div class="container">
+  <div class="main-content-container">
+    <h1><%= @event.title %></h1>
 
-  <p>Date &amp; Time: <%= @event.date %></p>
-  <p>Location: <%= @event.location %></p>
+    <p>Date &amp; Time: <%= @event.date %></p>
+    <p>Location: <%= @event.location %></p>
 
-  <!-- CSS needed in the event show page -->
-  <p><%= image_tag @event.poster  %></p>
+    <!-- CSS needed in the event show page -->
+    <p><%= image_tag @event.poster  %></p>
 
-  <p>Type: <%= @event.category.capitalize %></p>
-  <p>Volunteers: <%= @event.volunteer_number %></p>
-  <p>Organizer: <%= @event.user.try(:name) %></p>
+    <p>Type: <%= @event.category.capitalize %></p>
+    <p>Volunteers: <%= @event.volunteer_number %></p>
+    <p>Organizer: <%= @event.user.try(:name) %></p>
 
-  <div>
-    <%= link_to "Edit", edit_event_path(@event), class: 'btn btn-default' %>
-    <%= link_to "Delete", event_path(@event), class: 'btn btn-danger', method: "delete" %>
-  </div>
+    <div>
+      <%= link_to "Edit", edit_event_path(@event), class: 'btn btn-default' %>
+      <%= link_to "Delete", event_path(@event), class: 'btn btn-danger', method: "delete" %>
+    </div>
 
-  <h2>Volunteers</h2>
+    <h2>Volunteers</h2>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>
-         Applied at
-        </th>
-        <th>
-         Name
-        </th>
-        <th>
-        Status
-        </th>
-        <th>
-         Action
-        </th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @volunteer_applications.each do |volunteer_application| %>
+    <table class="table">
+      <thead>
         <tr>
-          <td>
-            <%= volunteer_application.created_at %>
-          </td>
-          <td>
-            <%= volunteer_application.user.name %>
-          </td>
-          <td>
-            <%= volunteer_application.status.humanize %>
-          </td>
-          <td>
-            <% if volunteer_application.may_accept? %>
-              <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-success' %>
-            <% end %>
-            <% if volunteer_application.may_decline? %>
-              <%= link_to "Decline", event_volunteer_application_decline_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-danger' %>
-            <% end %>
-          </td>
+          <th>
+           Applied at
+          </th>
+          <th>
+           Volunteer Name
+          </th>
+          <th>
+          Status
+          </th>
+          <th>
+           Action
+          </th>
+          <th>
+           Mobile Phone
+          </th>
+          <th>
+           Email
+          </th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <%= link_to "Go back to dashboard", dashboard_index_path, class: 'btn btn-default' %>
+      <tbody>
+        <% @volunteer_applications.each do |volunteer_application| %>
+          <tr>
+            <td>
+              <%= volunteer_application.created_at %>
+            </td>
+            <td>
+              <%= volunteer_application.user.name %>
+            </td>
+            <td>
+              <%= volunteer_application.status.humanize %>
+            </td>
+            <td>
+              <% if volunteer_application.may_accept? %>
+                <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-success' %>
+              <% end %>
+              <% if volunteer_application.may_decline? %>
+                <%= link_to "Decline", event_volunteer_application_decline_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-danger' %>
+              <% end %>
+            </td>
+             <td>
+              <%= volunteer_application.phone_number %>
+            </td>
+             <td>
+              <%= volunteer_application.email.humanize %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to "Go back to dashboard", dashboard_index_path, class: 'btn btn-default' %>
+  </div>
 </div>

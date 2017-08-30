@@ -75,6 +75,7 @@ end
 
 def sync_production_env
   scp_upload('config/application.yml', "#{@root_path}/shared/config/", verbose: true)
+  # scp_download("#{@root_path}/shared/config/application.yml", 'config/application.yml', verbose: true)
 end
 
 task :sync_env do
