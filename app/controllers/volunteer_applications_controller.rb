@@ -1,15 +1,18 @@
 class VolunteerApplicationsController < ApplicationController
 
   def confirm
-    redirect_to event_path(id: 1)
-  end
+    @event = current_user.events.find(params[:event_id])
+    @volunteer_application = @event.volunteer_applications.find(params[:id])
+    @volunteer_application.accept!
 
-  def pending
-    redirect_to event_path(id: 1)
+    redirect_to event_path(@volunteer_application.event_id)
   end
 
   def decline
-    redirect_to event_path(id: 1)
+    @volunteer_application = VolunteerApplication.find_by(params[:id])
+    @volunteer_application.decline!
+
+    redirect_to event_path(@volunteer_application.event_id)
   end
 
 end

@@ -9,7 +9,6 @@ class EventsController < ApplicationController
 
 
   def show
-    @event = Event.find(params[:id])
     @volunteer_applications = @event.volunteer_applications
   end
 
