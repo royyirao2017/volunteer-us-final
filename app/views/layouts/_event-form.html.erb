@@ -1,30 +1,79 @@
-<div class="banner-container">
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "together2.jpg" %>');">
-  <div class="container">
-    <div class="event-form-container">
-      <h2>Create Your Event</h2>
+<div class="main-content">
+  <div class="event-form-container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+    <h2>填写基本信息</h2>
+    <%= simple_form_for(@event, class: "form-horizontal") do |f| %>
+      <div class="row form-group">
+        <label class="col-sm-3 control-label">活动标题</label>
+        <div class="col-sm-9">
+          <%= f.input :title, label: false, class: "form-control", placeholder: "活动标题（不少于5个字）" %>
+        </div>
+      </div>
 
-      <div class="row">
-       <div class="col-xs-12">
-           <%= simple_form_for @event do |f|%>
-           <div class="form-inputs">
-             <%= f.input :title %>
-             <%= f.input :date %>
-             <%= f.input :poster %>
-             <%= f.input :location %>
-             <%= f.input :description %>
-             <%= f.input :volunteer_number %>
-             <%= f.input :volunteer_duties %>
-             <%= f.input :volunteer_perks %>
-             <%= f.input :category, collection: Event::CATEGORY %>
-           </div>
+      <div class="row form-group">
+        <label class="col-sm-3 control-label">活动时间</label>
+        <div class="col-sm-9">
+          <%= f.input :date, label: false, class: "form-control" %>
+        </div>
+      </div>
 
-           <div class="form-actions text-center">
-             <%= f.button :submit, "Finished",class: "btn btn-default btn-md", style:"color: #2DB94D; font-weight: bold; width: 40%;" %>
-           </div>
-         <% end %>
-       </div>
-     </div>
-   </div>
+      <div class="row form-group">
+        <label class="col-sm-3 control-label">活动地点</label>
+        <div class="col-sm-9">
+          <%= f.input :location, label: false, class: "form-control", placeholder: "例如：成都高新区天府新谷" %>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <label class="col-sm-3 control-label">活动海报</label>
+        <div class="col-sm-9">
+          <%= f.input :poster, label: false, class: "form-control", placeholder: "例如：海报url" %>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <label class="col-sm-3 control-label">志愿者人数</label>
+        <div class="col-sm-9">
+          <%= f.input :volunteer_number, collection: 1..100, label: false, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <label class="col-sm-3 control-label">活动详细内容</label>
+        <div class="col-sm-9">
+          <%= f.input :description, label: false, as: :text, class: "form-control", placeholder: "我们的活动是关于...", :input_html => { :rows => 6 } %>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <label class="col-sm-3 control-label">志愿者义务</label>
+        <div class="col-sm-9">
+          <%= f.input :volunteer_duties, label: false, as: :text, class: "form-control", placeholder:"例如：志愿者会帮助签到等", :input_html => { :rows => 6 } %>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <label class="col-sm-3 control-label">志愿者福利</label>
+        <div class="col-sm-9">
+          <%= f.input :volunteer_perks, label: false, as: :text, class: "form-control", placeholder:"例如：免费的午餐，T-shirt等", :input_html => { :rows => 6 } %>
+        </div>
+      </div>
+      <div class="row form-group">
+        <label class="col-sm-3 control-label">活动种类</label>
+        <div class="col-sm-9">
+          <%= f.select :category, event_categories_for_select, {}, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="row form-group mt--2">
+        <div class="col-sm-offset-3 col-sm-6">
+          <%= f.button :submit, "发布", class: "btn btn-default btn-block btn-md", style:"background: #2DB94D; color:white; font-weight: bold;" %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+    </div>
   </div>
 </div>
+
