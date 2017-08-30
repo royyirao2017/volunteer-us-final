@@ -62,6 +62,6 @@ Event.create({
 
 v_a_1 = VolunteerApplication.create({
   status: "pending",
-  user_id: user.id,
+  user_id: user_2.id,
   event_id: event.id,
   })
