@@ -1,2 +1,6 @@
 // Import page-specific CSS files here.
+@import "sessions/new";
+@import "registrations/new";
+@import "passwords/new";
 @import "home";
+@import "dashboard/index";

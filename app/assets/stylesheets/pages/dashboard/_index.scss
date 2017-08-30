@@ -1,0 +1,32 @@
+.icon-new {
+  height: 50px;
+  width: 50px;
+}
+
+.dashboard-container{
+  padding: 30px;
+  h1 {
+    text-align: center;
+  }
+  height: 80%
+}
+
+.dashbaord-events {
+  display: flex;
+}
+
+.dashboard-event {
+  flex-grow: 1;
+  position: relative;
+}
+
+.dashboard-event .info {
+  position: absolute;
+}
+
+.panel__dashboard-event {
+  height: 350px;
+  .event-poster img {
+    width: 100%;
+  }
+}
