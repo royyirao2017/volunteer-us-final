@@ -31,6 +31,17 @@ user_2 = User.create({
   university: "Hog Warts U",
   })
 
+user_3 = User.create({
+  email: "dumble@volunteerus.com",
+  password: "123123",
+  name: "Dumble Dore",
+  phone_number: "90909090909",
+  age: 21,
+  university: "Hog Warts U",
+  })
+
+
+
 
 event = Event.create({
   title: "Coding Meet Up September Edition",
@@ -65,3 +76,10 @@ v_a_1 = VolunteerApplication.create({
   user_id: user_2.id,
   event_id: event.id,
   })
+
+v_a_2 = VolunteerApplication.create({
+  status: "pending",
+  user_id: user_3.id,
+  event_id: event.id,
+  })
+
