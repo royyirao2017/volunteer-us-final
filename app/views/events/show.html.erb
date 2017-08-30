@@ -10,8 +10,8 @@
    <p>Type: <%= @event.category.capitalize %></p>
    <p>Volunteers: <%= @event.volunteer_number %></p>
    <p>Organizer: <%= @event.user.try(:name) %></p>
-   <%= link_to "Edit", edit_event_path(@event) %>
-   <%= link_to "Delete", event_path(@event), method: "delete" %>
+   <%= link_to "Edit", edit_event_path(@event), class: 'btn btn-default' %>
+   <%= link_to "Delete", event_path(@event), class: 'btn btn-danger', method: "delete" %>
 
     <h2>Volunteers</h2>
 
@@ -19,7 +19,7 @@
       <thead>
         <tr>
           <th>
-           #
+           Applied at
           </th>
           <th>
            Name
@@ -34,27 +34,30 @@
       </thead>
 
       <tbody>
-        <tr>
-          <td>
-            1
-          </td>
-          <td>
-            Eddie Lau
-          </td>
-          <td>
-           Confirmed
-          </td>
-          <td>
-            <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-            <%= link_to "Pending", event_volunteer_application_pending_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-            <%= link_to "Decline", event_volunteer_application_decline_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-          </td>
-        </tr>
+        <% @volunteer_applications.each do |volunteer_application| %>
+          <tr>
+            <td>
+              <%= volunteer_application.created_at %>
+            </td>
+            <td>
+              <%= volunteer_application.user.name %>
+            </td>
+            <td>
+              <%= volunteer_application.status.humanize %>
+            </td>
+            <td>
+              <% if volunteer_application.may_accept? %>
+                <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: @event.id, id: volunteer_application.id), method: :put, class: 'btn btn-success' %>
+              <% end %>
+              <% if volunteer_application.may_decline? %>
+                <%= link_to "Decline", event_volunteer_application_decline_path(event_id: @event.id, id: volunteer_application.id), method: :put, class: 'btn btn-danger' %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
 
-    <%= link_to "Go back to dashboard", dashboard_index_path %>
+    <%= link_to "Go back to dashboard", dashboard_index_path, class: 'btn btn-default' %>
   </div>
 </div>
-
-
