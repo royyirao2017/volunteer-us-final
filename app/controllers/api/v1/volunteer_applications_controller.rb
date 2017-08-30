@@ -34,6 +34,6 @@ class Api::V1::VolunteerApplicationsController < Api::V1::BaseController
   def volunteer_application_params
     # These params are required to create an event in event/new view
     params.delete(:format)
-    params.permit(:status, :user, :event, :code, :event_id)
+    params.permit(:status, :user, :event, :code, :event_id, :name, :email, :phone_number, :age, :university)
   end
 end
