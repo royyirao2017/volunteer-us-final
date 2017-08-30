@@ -18,7 +18,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li class="dropdown">
-            <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <%= image_tag gravatar_url(current_user.email, 64), alt: "", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
             <ul class="dropdown-menu">
               <li>
                 <%= link_to profile_path do %>
