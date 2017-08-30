@@ -10,7 +10,7 @@
 
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "squarelogo.png", class: "logo" %>
-        Volunteer Us
+        有志者 VolunteerUs
       <% end %>
     </div>
 
@@ -38,7 +38,7 @@
             </ul>
           </li>
         <% else %>
-          <%= link_to t(".sign_in", default: "Sign Up / Login"), new_user_session_path, class: "btn btn-success", style: "margin-top: 5px" %>
+          <%= link_to t(".sign_in", default: "注册 | 登录"), new_user_session_path, class: "btn btn-success", style: "margin-top: 5px" %>
         <% end %>
       </ul>
     </div>
