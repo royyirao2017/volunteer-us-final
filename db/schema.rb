@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170830035540) do
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
   end
-
+  
   create_table "events", force: :cascade do |t|
     t.text     "title"
     t.date     "date"

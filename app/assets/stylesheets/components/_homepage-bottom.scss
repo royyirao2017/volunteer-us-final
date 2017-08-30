@@ -1,19 +1,61 @@
 .icon {
-  height: 97px;
-  width: 97px;
-  margin-left: 100px;
-  margin-top: 30px;
-  color: #2DB94D !important;
+  height: 80px;
+  width: 80px;
+  margin-top: 35px;
+  position: absolute;
+  left: 21%;
 }
 
-.homepage-bottom h2 {
-  margin-left: 60px;
-  color: #2DB94D;
+body {
+  background:white;
+  font-family:sans-serif;
 }
-
-.homepage-bottom p {
-  margin-left: 40px;
-  color: #2DB94D;
+div.profileSteps {
+  display: flex;
+  margin: 10px auto;
+  width: 70%;
+  height: 260px;
+}
+div.profileStep {
+  flex-grow: 1;
+  position: relative;
+  height: 236px;
+  background-color: white;
+  margin-right: 40px;
+}
+div.profileStep .connect {
+  position:absolute;
+  top:10px;left:0;
+  width:160px;
+  height:10px;
+  margin-left:-5px;
+  background-color:#2DB94D;
+  border-radius:5px;
+}
+div.profileStep .circle-number {
+  position:absolute;
+  top:0;
+  left:0;
+  width:30px;height:30px;
+  background-color:#2DB94D;
+  border-radius:15px;
+  color:white;
+  font-size:16px;
+  line-height:30px;
+  text-align:center;
+}
+div.profileStep .info {
+  position:absolute;
+  bottom:0;
+  left:-10px;
+  width:200px;
+  color:#2DB94D;
+  line-height:20px;
+  text-align:center;
+}
+.profileStepOne {
+  border-right-style: dotted;
+  border-right-color: #2DB94D;
 }
 
 .SignUp {
