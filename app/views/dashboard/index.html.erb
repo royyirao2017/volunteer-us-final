@@ -1,6 +1,6 @@
 <div class="main-content-container">
  <h1>Welcome to your Dashboard</h1>
- <%= image_tag gravatar_url("you@youremail.com", 64), alt: "" %>
+ <%= image_tag gravatar_url(current_user.email, 64), alt: "" %>
  <div class="row">
    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
      <%= link_to t(" new_event_url", default: "Create New Event"),new_event_url, class: "btn btn-success btn-lg" %>
