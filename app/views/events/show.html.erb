@@ -1,60 +1,65 @@
-<div class="banner-container">
- <div class="login-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "together2.jpg" %>');">
-   <div class="banner-content">
-   <h1><%= @event.title %></h1>
-   <p>Date & Time: <%= @event.date %></p>
-   <p>Location: <%= @event.location %></p>
-   <!-- CSS needed in the event show page -->
-   <p><%= image_tag @event.poster  %></p>
+<div class="main-content-container">
+  <h1><%= @event.title %></h1>
 
-   <p>Type: <%= @event.category.capitalize %></p>
-   <p>Volunteers: <%= @event.volunteer_number %></p>
-   <p>Organizer: <%= @event.user.try(:name) %></p>
-   <%= link_to "Edit", edit_event_path(@event) %>
-   <%= link_to "Delete", event_path(@event), method: "delete" %>
+  <p>Date &amp; Time: <%= @event.date %></p>
+  <p>Location: <%= @event.location %></p>
 
-    <h2>Volunteers</h2>
+  <!-- CSS needed in the event show page -->
+  <p><%= image_tag @event.poster  %></p>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th>
-           #
-          </th>
-          <th>
-           Name
-          </th>
-          <th>
-          Status
-          </th>
-          <th>
-           Action
-          </th>
-        </tr>
-      </thead>
+  <p>Type: <%= @event.category.capitalize %></p>
+  <p>Volunteers: <%= @event.volunteer_number %></p>
+  <p>Organizer: <%= @event.user.try(:name) %></p>
 
-      <tbody>
-        <tr>
-          <td>
-            1
-          </td>
-          <td>
-            Eddie Lau
-          </td>
-          <td>
-           Confirmed
-          </td>
-          <td>
-            <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-            <%= link_to "Pending", event_volunteer_application_pending_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-            <%= link_to "Decline", event_volunteer_application_decline_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <%= link_to "Go back to dashboard", dashboard_index_path %>
+  <div>
+    <%= link_to "Edit", edit_event_path(@event), class: 'btn btn-default' %>
+    <%= link_to "Delete", event_path(@event), class: 'btn btn-danger', method: "delete" %>
   </div>
+
+  <h2>Volunteers</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+         Applied at
+        </th>
+        <th>
+         Name
+        </th>
+        <th>
+        Status
+        </th>
+        <th>
+         Action
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @volunteer_applications.each do |volunteer_application| %>
+        <tr>
+          <td>
+            <%= volunteer_application.created_at %>
+          </td>
+          <td>
+            <%= volunteer_application.user.name %>
+          </td>
+          <td>
+            <%= volunteer_application.status.humanize %>
+          </td>
+          <td>
+            <% if volunteer_application.may_accept? %>
+              <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-success' %>
+            <% end %>
+            <% if volunteer_application.may_decline? %>
+              <%= link_to "Decline", event_volunteer_application_decline_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-danger' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "Go back to dashboard", dashboard_index_path, class: 'btn btn-default' %>
 </div>
-
-

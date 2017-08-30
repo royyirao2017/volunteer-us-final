@@ -11,12 +11,39 @@ Event.delete_all
 User.delete_all
 
 
+
+
 user = User.create({
   email: "billgates@volunteerus.com",
   password: "123123",
+  name: "Bill Gates",
+  phone_number: '12345678',
+  age: 22,
+  university: "Micro University",
   })
 
-Event.create({
+user_2 = User.create({
+  email: "ssnape@volunteerus.com",
+  password: "123123",
+  name: "Severus Snape",
+  phone_number: "90909090909",
+  age: 21,
+  university: "Hog Warts U",
+  })
+
+user_3 = User.create({
+  email: "dumble@volunteerus.com",
+  password: "123123",
+  name: "Dumble Dore",
+  phone_number: "90909090909",
+  age: 21,
+  university: "Hog Warts U",
+  })
+
+
+
+
+event = Event.create({
   title: "Coding Meet Up September Edition",
   date: Date.today + 1.month,
   location: "Chengdu",
@@ -28,7 +55,6 @@ Event.create({
   volunteer_duties: "Hold the banana",
   volunteer_perks: "Eat the banana",
   featured: true
-
   })
 
 Event.create({
@@ -44,3 +70,16 @@ Event.create({
   volunteer_perks: "You get to drink",
   featured: false
 })
+
+v_a_1 = VolunteerApplication.create({
+  status: "pending",
+  user_id: user_2.id,
+  event_id: event.id,
+  })
+
+v_a_2 = VolunteerApplication.create({
+  status: "pending",
+  user_id: user_3.id,
+  event_id: event.id,
+  })
+
