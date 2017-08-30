@@ -50,10 +50,10 @@
           </td>
           <td>
             <% if volunteer_application.may_accept? %>
-              <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: @event.id, id: volunteer_application.id), method: :put, class: 'btn btn-success' %>
+              <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-success' %>
             <% end %>
             <% if volunteer_application.may_decline? %>
-              <%= link_to "Decline", event_volunteer_application_decline_path(event_id: @event.id, id: volunteer_application.id), method: :put, class: 'btn btn-danger' %>
+              <%= link_to "Decline", event_volunteer_application_decline_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-danger' %>
             <% end %>
           </td>
         </tr>
