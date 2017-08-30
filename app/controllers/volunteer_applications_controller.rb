@@ -9,7 +9,7 @@ class VolunteerApplicationsController < ApplicationController
 
     SendAcceptedSMS.call(mobile: @volunteer_application.phone_number,
                          user_name: @volunteer_application.name,
-                         event_name: @volunteer_application.event)
+                         event_name: @volunteer_application.event.title)
   end
 
   def decline
@@ -21,7 +21,7 @@ class VolunteerApplicationsController < ApplicationController
 
     SendRejectedSMS.call(mobile: @volunteer_application.phone_number,
                          user_name: @volunteer_application.name,
-                         event_name: @volunteer_application.event)
+                         event_name: @volunteer_application.event.title)
   end
 
 end
