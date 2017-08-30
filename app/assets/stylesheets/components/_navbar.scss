@@ -3,10 +3,19 @@
   color: $green;
   font-size: 30px;
   font-weight: bold;
+  display: inline;
+  img {
+    height: 45px;
+    padding-bottom: 10px;
+  }
+}
+
+.navbar-brand > img {
+    display: inline;
 }
 
 .navbar-default .navbar-brand:hover {
-  color: #da552f;
+  color: rgb(91, 204, 116);
   text-decoration: none;
 }
 /* User Avatar */
