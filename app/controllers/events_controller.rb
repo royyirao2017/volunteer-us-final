@@ -1,20 +1,16 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy], raise: false
+  before_action :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   #this shows the list of volunteers for an event
-  def index
-    @events = Event.all
-  end
+  # def index
+  #   @events = Event.all
+  # end
 
 
   def show
     @event = Event.find(params[:id])
-
-    if user_signed_in?
-      @user_confirmed = @event.volunteer_applications.where("user_id = ? AND confirmed = ?", current_user.id, true)
-      @user_registered = current_user.volunteer_applications.find_by(event_id: @event.id)
-    end
+    @volunteer_applications = @event.volunteer_applications
   end
 
   def new

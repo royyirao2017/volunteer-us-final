@@ -19,7 +19,7 @@
       <thead>
         <tr>
           <th>
-           #
+           Applied at
           </th>
           <th>
            Name
@@ -34,22 +34,23 @@
       </thead>
 
       <tbody>
-        <tr>
-          <td>
-            1
-          </td>
-          <td>
-            Eddie Lau
-          </td>
-          <td>
-           Confirmed
-          </td>
-          <td>
-            <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-            <%= link_to "Pending", event_volunteer_application_pending_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-            <%= link_to "Decline", event_volunteer_application_decline_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-          </td>
-        </tr>
+        <% @volunteer_applications.each do |volunteer_application| %>
+          <tr>
+            <td>
+              <%= volunteer_application.created_at %>
+            </td>
+            <td>
+              <%= volunteer_application.user.name %>
+            </td>
+            <td>
+              <%= volunteer_application.status.humanize %>
+            </td>
+            <td>
+              <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: 1, volunteer_application_id: 1), method: :put %>
+              <%= link_to "Decline", event_volunteer_application_decline_path(event_id: 1, volunteer_application_id: 1), method: :put %>
+            </td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
 
