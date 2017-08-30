@@ -46,16 +46,14 @@
               <%= volunteer_application.status.humanize %>
             </td>
             <td>
-              <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: 1, volunteer_application_id: 1), method: :put %>
-              <%= link_to "Decline", event_volunteer_application_decline_path(event_id: 1, volunteer_application_id: 1), method: :put %>
+              <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: 1, volunteer_application_id: 1), method: :put, class: 'btn btn-success' %>
+              <%= link_to "Decline", event_volunteer_application_decline_path(event_id: 1, volunteer_application_id: 1), method: :put, class: 'btn btn-danger' %>
             </td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-    <%= link_to "Go back to dashboard", dashboard_index_path %>
+    <%= link_to "Go back to dashboard", dashboard_index_path, class: 'btn btn-secondary' %>
   </div>
 </div>
-
-
