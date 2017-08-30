@@ -17,6 +17,10 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem "omniauth-wechat-oauth2"
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
+gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
+
+
 
 # API
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
