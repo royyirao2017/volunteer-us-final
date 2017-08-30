@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830035540) do
+ActiveRecord::Schema.define(version: 20170830065015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170830035540) do
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
   end
-  
+
   create_table "events", force: :cascade do |t|
     t.text     "title"
     t.date     "date"
@@ -78,8 +78,13 @@ ActiveRecord::Schema.define(version: 20170830035540) do
     t.text     "status"
     t.integer  "user_id"
     t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.integer  "age"
+    t.string   "university"
     t.index ["event_id"], name: "index_volunteer_applications_on_event_id", using: :btree
     t.index ["user_id"], name: "index_volunteer_applications_on_user_id", using: :btree
   end
