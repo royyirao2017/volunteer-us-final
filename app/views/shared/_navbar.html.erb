@@ -10,7 +10,7 @@
 
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "squarelogo.png", class: "logo" %>
-        Volunteer Us
+        有志者 VolunteerUs
       <% end %>
     </div>
 
@@ -18,7 +18,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li class="dropdown">
-            <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <%= image_tag gravatar_url(current_user.email, 64), alt: "", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
             <ul class="dropdown-menu">
               <li>
                 <%= link_to profile_path do %>
@@ -38,7 +38,7 @@
             </ul>
           </li>
         <% else %>
-          <%= link_to t(".sign_in", default: "Sign Up / Login"), new_user_session_path, class: "btn btn-success", style: "margin-top: 5px" %>
+          <%= link_to t(".sign_in", default: "注册 | 登录"), new_user_session_path, class: "btn btn-success", style: "margin-top: 5px" %>
         <% end %>
       </ul>
     </div>

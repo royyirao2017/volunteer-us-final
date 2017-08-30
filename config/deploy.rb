@@ -12,8 +12,8 @@ set :domain, 'wagon'
 set :deploy_to, @root_path
 # set :repository, 'https://github.com/kwnath/seeme.git'
 
-set :branch, 'master'
 # set :branch, 'master'
+set :branch, 'send-sms-test'
 
 set :rsync_options, %w[
   --recursive --delete --delete-excluded
@@ -75,6 +75,7 @@ end
 
 def sync_production_env
   scp_upload('config/application.yml', "#{@root_path}/shared/config/", verbose: true)
+  # scp_download("#{@root_path}/shared/config/application.yml", 'config/application.yml', verbose: true)
 end
 
 task :sync_env do
