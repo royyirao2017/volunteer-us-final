@@ -48,7 +48,7 @@ event = Event.create!({
   description: "Learn how to code like the best, from the best",
   volunteer_duties: "Be the rubber ducky",
   volunteer_perks: "Free t-shirt and tote bag for all volunteers",
-  featured: true
+  featured: false
   })
 
 Event.create!({
@@ -62,22 +62,9 @@ Event.create!({
   description: "A Palm Day Celebration",
   volunteer_duties: "Keep the guests happy, distracted from the mundanity of life!",
   volunteer_perks: "Free food and drink",
-  featured: false
+  featured: true
 })
 
-Event.create!({
-  title: "Alcoholics Anonymous",
-  date: Date.today + 1.month,
-  location: "Paris",
-  volunteer_number: 19,
-  user_id: user_2.id,
-  category: "健康医疗",
-  poster: "http://placehold.it/300x200",
-  description: "Bill Gates wants to teach you how to give up booze",
-  volunteer_duties: "Don't let them drink",
-  volunteer_perks: "You get to drink",
-  featured: false
-})
 
 Event.create!({
   title: "Social Impact: Lunch and Learn",
