@@ -13,7 +13,7 @@ User.delete_all
 
 
 
-user = User.create({
+user = User.create!({
   email: "billgates@volunteerus.com",
   password: "123123",
   name: "Bill Gates",
@@ -22,7 +22,7 @@ user = User.create({
   university: "Micro University",
   })
 
-user_2 = User.create({
+user_2 = User.create!({
   email: "ssnape@volunteerus.com",
   password: "123123",
   name: "Severus Snape",
@@ -31,7 +31,7 @@ user_2 = User.create({
   university: "Hog Warts U",
   })
 
-user_3 = User.create({
+user_3 = User.create!({
   email: "dumble@volunteerus.com",
   password: "123123",
   name: "Dumble Dore",
@@ -43,7 +43,7 @@ user_3 = User.create({
 
 
 
-event = Event.create({
+event = Event.create!({
   title: "Coding Meet Up September Edition",
   date: Date.today + 1.month,
   location: "Chengdu",
@@ -57,7 +57,7 @@ event = Event.create({
   featured: true
   })
 
-Event.create({
+Event.create!({
   title: "Alcoholics Anonymous",
   date: Date.today + 1.month,
   location: "Paris",
@@ -71,15 +71,14 @@ Event.create({
   featured: false
 })
 
-v_a_1 = VolunteerApplication.create({
+v_a_1 = VolunteerApplication.create!({
   status: "pending",
   user_id: user_2.id,
   event_id: event.id,
   })
 
-v_a_2 = VolunteerApplication.create({
+v_a_2 = VolunteerApplication.create!({
   status: "pending",
   user_id: user_3.id,
   event_id: event.id,
-  })
-
+})
