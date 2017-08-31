@@ -5,19 +5,24 @@
     <div class="row">
       <% @events.each do |event| %>
         <div class="col-md-4">
-          <%= link_to event_path(event) do %>
+          <%= link_to event_path(event), class: 'panel__dashboard-event-link' do %>
             <div class="panel panel__dashboard-event">
               <div class="panel-body">
                 <div class="event-poster">
                   <%= image_tag event.poster || 'http://placehold.it/200x200' %>
                 </div>
-                <div class="event-name" style="color: #2DB94D;">
+
+                <hr/>
+
+                <div class="event-name">
                   <%= event.title %>
                 </div>
-                <div class="event-date" style="color: #2DB94D;">
+                <div class="event-date">
+                  <i class="fa fa-calendar"></i>
                   <%= event.date %>
                 </div>
-                <div class="event-location" style="color: #2DB94D;">
+                <div class="event-location">
+                  <i class="fa fa-map-marker"></i>
                   <%= event.location %>
                 </div>
               </div>
