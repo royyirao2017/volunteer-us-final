@@ -9,8 +9,8 @@
 VolunteerApplication.delete_all
 Event.delete_all
 
-user = User.create!({
-  email: "billgates@volunteerus.com",
+user = User.create({
+  email: "billgates1@volunteerus.com",
   password: "123123",
   name: "Bill Gates",
   phone_number: '12345678',
@@ -18,8 +18,8 @@ user = User.create!({
   university: "Micro University",
   })
 
-user_2 = User.create!({
-  email: "ssnape@volunteerus.com",
+user_2 = User.create({
+  email: "ssnape2@volunteerus.com",
   password: "123123",
   name: "Severus Snape",
   phone_number: "90909090909",
@@ -27,8 +27,8 @@ user_2 = User.create!({
   university: "Hog Warts U",
   })
 
-user_3 = User.create!({
-  email: "dumble@volunteerus.com",
+user_3 = User.create({
+  email: "dumble3@volunteerus.com",
   password: "123123",
   name: "Dumble Dore",
   phone_number: "90909090909",
