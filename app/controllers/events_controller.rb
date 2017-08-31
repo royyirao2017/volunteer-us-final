@@ -9,6 +9,15 @@ class EventsController < ApplicationController
 
 
   def show
+    @event = Event.find(params[:id])
+
+    @qr_code_file_path = "assets/event-qrcode-#{@event.id}.png"
+
+    unless File.exists?(Rails.root.join('public', @qr_code_file_path))
+      access_token = GetAccessToken.call
+      GenerateQRCode.call(access_token, @event.id)
+    end
+
     @volunteer_applications = @event.volunteer_applications
   end
 
