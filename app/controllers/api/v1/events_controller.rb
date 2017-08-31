@@ -10,7 +10,7 @@ class Api::V1::EventsController < Api::V1::BaseController
 
     puts "index"
     puts "Event #{Event.all.inspect}"
-    render :ok, json: Event.all
+    render :ok, json: Event.order(created_at: :desc)
   end
 
   def show
