@@ -8,8 +8,9 @@
 
 VolunteerApplication.delete_all
 Event.delete_all
+User.delete_all
 
-user = User.create({
+user = User.create!({
   email: "bgates1@volunteerus.com",
   password: "123123",
   name: "Bill Gates",
@@ -18,7 +19,7 @@ user = User.create({
   university: "Micro University",
   })
 
-user_2 = User.create({
+user_2 = User.create!({
   email: "snape2@volunteerus.com",
   password: "123123",
   name: "Severus Snape",
@@ -27,7 +28,7 @@ user_2 = User.create({
   university: "Hog Warts U",
   })
 
-user_3 = User.create({
+user_3 = User.create!({
   email: "d_umble3@volunteerus.com",
   password: "123123",
   name: "Dumble Dore",
@@ -92,7 +93,7 @@ Event.create!({
   featured: true
 })
 
-Event.create({
+Event.create!({
  title: "World Cancer Day",
  date: Date.today + 6.month,
  location: "SBC TianFu XinGu, Chengdu",
@@ -106,7 +107,7 @@ Event.create({
  featured: false
 })
 
-Event.create({
+Event.create!({
  title: "CollegeBoard USA",
  date: Date.today + 8.month,
  location: "Walnut, Chengdu",
@@ -120,7 +121,7 @@ Event.create({
  featured: false
 })
 
-Event.create({
+Event.create!({
  title: "Startup Weekend",
  date: Date.today + 12.month,
  location: "Walnut, Chengdu",
