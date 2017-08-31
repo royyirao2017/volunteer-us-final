@@ -39,7 +39,7 @@ class EventsController < ApplicationController
 
         puts "save @event #{@event.errors.inspect}"
 
-        redirect_to dashboard_index_path(@event)
+        redirect_to event_path(@event)
       else
 
         puts "failed @event #{@event.errors.inspect}"
