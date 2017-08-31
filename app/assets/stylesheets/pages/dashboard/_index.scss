@@ -24,9 +24,42 @@
   position: absolute;
 }
 
+.panel__dashboard-event-link {
+  text-decoration: none;
+}
+
+.panel__dashboard-event-link:hover {
+  text-decoration: none;
+}
+
 .panel__dashboard-event {
   height: 350px;
-  .event-poster img {
-    width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  color: black;
+
+  .event-poster {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+
+  .event-date {
+    font-size: 15px;
+  }
+  .event-location {
+    font-size: 15px;
+  }
+
+}
+
+.panel__dashboard-event:hover {
+  color: #2DB94D;
+  a {
+    text-decoration: none;
   }
 }
