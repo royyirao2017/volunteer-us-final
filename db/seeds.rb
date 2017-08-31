@@ -11,7 +11,7 @@ Event.delete_all
 User.delete_all
 
 user = User.create!({
-  email: "bgates1@volunteerus.com",
+  email: "dengel29@gmail.com",
   password: "123123",
   name: "Bill Gates",
   phone_number: '12345678',
@@ -99,7 +99,7 @@ Event.create!({
  location: "SBC TianFu XinGu, Chengdu",
  volunteer_number: 20,
  user_id: user.id,
- category: "healthcare",
+ category: "健康医疗",
  poster: "http://www.cancerresearchuk.org/sites/default/files/world-cancer-day-header-medium.png",
  description: "We are spreading awareness to the global cancer research done. Showing what projects and opportunities are available here in Chengdu and across the world.",
  volunteer_duties: "Volunteers will be doing ushering, setting up and cleaning up. Also help out vendors at the event.",
