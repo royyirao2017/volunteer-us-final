@@ -1,5 +1,7 @@
 <div class="container">
-  <%= image_tag "QR.jpg", class: "qr-code", style: "width: 200px; height: 200px; margin-left: 450px"; %>
+  <div class="event__qr-code">
+    <img src="/<%= @qr_code_file_path %>">
+  </div>
   <div class="main-content-container">
     <div>
 
@@ -70,25 +72,45 @@
           <p>你目前还没有志愿者哦</p>
           </div>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="profile">
-              <div class=
-              <h1><%= @event.title %></h1>
-              <p><%= image_tag @event.poster  %></p>
-              <p>活动时间: <%= @event.date %></p>
-              <p>活动地点: <%= @event.location %></p>
 
-              <!-- CSS needed in the event show page -->
-              <p>活动种类: <%= @event.category.capitalize %></p>
-              <p>志愿者人数: <%= @event.volunteer_number %></p>
-              <p>组织者: <%= @event.user.try(:name) %></p>
-              <p>活动详细内容: <%= @event.description %></p>
-              <p>志愿者义务: <%= @event.volunteer_duties %></p>
-              <p>志愿者福利: <%= @event.volunteer_perks %></p>
-              <div>
+        <div role="tabpanel" class="tab-pane fade" id="profile">
+          <h1><%= @event.title %></h1>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="event-poster">
+                <%= image_tag @event.poster  %>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="event-basic">
+                <p>活动时间: <%= @event.date %></p>
+                <p>活动地点: <%= @event.location %></p>
+
+                <!-- CSS needed in the event show page -->
+                <p>活动种类: <%= @event.category.capitalize %></p>
+                <p>志愿者人数: <%= @event.volunteer_number %></p>
+                <p>组织者: <%= @event.user.try(:name) %></p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="event-details">
+                <p>活动详细内容: <%= @event.description %></p>
+                <p>志愿者义务: <%= @event.volunteer_duties %></p>
+                <p>志愿者福利: <%= @event.volunteer_perks %></p>
+              </div>
+
+              <div class="action-buttons">
                 <%= link_to "更新", edit_event_path(@event), class: 'btn btn-default' %>
                 <%= link_to "删除", event_path(@event), class: 'btn btn-danger', method: "delete" %>
               </div>
-              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
