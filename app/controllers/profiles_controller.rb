@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = current_user
     if @profile.update(profile_params)
-      redirect_to profile_path, notice: 'Profile updated'
+      redirect_to dashboard_index_path, notice: 'Profile updated'
     else
       render :show
     end
