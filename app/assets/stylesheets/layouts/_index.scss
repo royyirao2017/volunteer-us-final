@@ -3,6 +3,7 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+@import "tab";
 
 .mt--1 {
   margin-top: 10px;
@@ -18,4 +19,14 @@
 
 .mb--2 {
   margin-top: 20px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body, .wrapper, .main-content {
+  background: #f8f8f8;
+  background-color: #f8f8f8;
 }

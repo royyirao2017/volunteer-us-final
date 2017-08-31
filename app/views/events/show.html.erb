@@ -1,95 +1,100 @@
 <div class="container">
+  <%= image_tag "QR.jpg", class: "qr-code", style: "width: 200px; height: 200px; margin-left: 450px"; %>
   <div class="main-content-container">
     <div>
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Volunteer status</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Event detail</a></li>
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">志愿者状态</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">活动内容</a></li>
       </ul>
 
       <!-- Tab panes -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="home">
           <table class="table">
-      <thead>
-        <tr>
-          <th>
-           Applied at
-          </th>
-          <th>
-           Volunteer Name
-          </th>
-          <th>
-          Status
-          </th>
-          <th>
-           Action
-          </th>
-          <th>
-           Mobile Phone
-          </th>
-          <th>
-           Email
-          </th>
-        </tr>
-      </thead>
+            <thead>
+              <tr>
+                <th>
+                 申请时间
+                </th>
+                <th>
+                 志愿者姓名
+                </th>
+                <th>
+                 申请状态
+                </th>
+                <th>
+                 待审核
+                </th>
+                <th>
+                 手机号码
+                </th>
+                <th>
+                 邮箱
+                </th>
+              </tr>
+            </thead>
 
-      <tbody>
-        <% @volunteer_applications.each do |volunteer_application| %>
-          <tr>
-            <td>
-              <%= volunteer_application.created_at %>
-            </td>
-            <td>
-              <%= volunteer_application.name %>
-            </td>
-            <td>
-              <%= volunteer_application.status.humanize %>
-            </td>
-            <td>
-              <% if volunteer_application.may_accept? %>
-                <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-success' %>
+            <tbody>
+              <% @volunteer_applications.each do |volunteer_application| %>
+                <tr>
+                  <td>
+                    <%= volunteer_application.created_at %>
+                  </td>
+                  <td>
+                    <%= volunteer_application.name %>
+                  </td>
+                  <td>
+                    <%= volunteer_application.status.humanize %>
+                  </td>
+                  <td>
+                    <% if volunteer_application.may_accept? %>
+                      <%= link_to "Confirm", event_volunteer_application_confirm_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-success' %>
+                    <% end %>
+                    <% if volunteer_application.may_decline? %>
+                      <%= link_to "Decline", event_volunteer_application_decline_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-danger' %>
+                    <% end %>
+                  </td>
+                   <td>
+                    <%= volunteer_application.phone_number %>
+                  </td>
+                   <td>
+                    <%= volunteer_application.email.humanize %>
+                  </td>
+                </tr>
               <% end %>
-              <% if volunteer_application.may_decline? %>
-                <%= link_to "Decline", event_volunteer_application_decline_path(event_id: @event.id, volunteer_application_id: volunteer_application.id), method: :put, class: 'btn btn-danger' %>
-              <% end %>
-            </td>
-             <td>
-              <%= volunteer_application.phone_number %>
-            </td>
-             <td>
-              <%= volunteer_application.email.humanize %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
+            </tbody>
+          </table>
+          <div class="volunteer-default">
+          <p>你目前还没有志愿者哦</p>
+          </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="profile">
               <div class=
               <h1><%= @event.title %></h1>
-
-              <p>Date &amp; Time: <%= @event.date %></p>
-              <p>Location: <%= @event.location %></p>
+              <p><%= image_tag @event.poster  %></p>
+              <p>活动时间: <%= @event.date %></p>
+              <p>活动地点: <%= @event.location %></p>
 
               <!-- CSS needed in the event show page -->
-              <p><%= image_tag @event.poster  %></p>
-
-              <p>Type: <%= @event.category.capitalize %></p>
-              <p>Volunteers: <%= @event.volunteer_number %></p>
-              <p>Organizer: <%= @event.user.try(:name) %></p>
-
+              <p>活动种类: <%= @event.category.capitalize %></p>
+              <p>志愿者人数: <%= @event.volunteer_number %></p>
+              <p>组织者: <%= @event.user.try(:name) %></p>
+              <p>活动详细内容: <%= @event.description %></p>
+              <p>志愿者义务: <%= @event.volunteer_duties %></p>
+              <p>志愿者福利: <%= @event.volunteer_perks %></p>
               <div>
-                <%= link_to "Edit", edit_event_path(@event), class: 'btn btn-default' %>
-                <%= link_to "Delete", event_path(@event), class: 'btn btn-danger', method: "delete" %>
+                <%= link_to "更新", edit_event_path(@event), class: 'btn btn-default' %>
+                <%= link_to "删除", event_path(@event), class: 'btn btn-danger', method: "delete" %>
               </div>
               </div>
         </div>
       </div>
     </div>
 
-    <%= link_to "Go back to dashboard", dashboard_index_path, class: 'btn btn-default' %>
+    <div class="text-center">
+      <%= link_to "返回个人页面", dashboard_index_path, class: 'btn btn-default' %>
+    </div>
   </div>
 </div>
