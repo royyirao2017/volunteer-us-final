@@ -39,7 +39,7 @@ class EventsController < ApplicationController
 
         puts "save @event #{@event.errors.inspect}"
 
-        redirect_to dashboard_index_path(@event)
+        redirect_to event_path(@event), notice: '<i class="fa fa-weixin"></i> Scan the QR code, then share the event page on WeChat to find volunteers'
       else
 
         puts "failed @event #{@event.errors.inspect}"
