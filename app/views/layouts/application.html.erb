@@ -10,6 +10,7 @@
     <%= favicon_link_tag 'squarelogo.png' %>
   </head>
   <body>
+    <div class = "wrapper">
     <%= render 'shared/navbar' %>
 
     <div class="main-content">
@@ -19,5 +20,6 @@
     <%= javascript_include_tag 'application' %>
     <%= render "pages/footer" %>
     <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    </div>
   </body>
 </html>
