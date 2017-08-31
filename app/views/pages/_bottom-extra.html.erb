@@ -1,0 +1,42 @@
+<div class="bottom-extra">
+  <div class="profile-title text-center" style="color: grey;">
+   <h3> Volunteer Journey</h3>
+  </div>
+  <div class="profileSteps">
+    <div class="profileStep profileStepOne">
+      <div class="connect"></div>
+      <div class="circle-number">1</div>
+      <%= image_tag "find.png", class: "icon" %>
+      <div class="info">
+        <h4>Find</h4>
+        <p> Find the event that speaks out to you</p>
+      </div>
+    </div>
+    <div class="profileStep profileStepOne">
+      <div class="connect"></div>
+      <div class="circle-number">2</div>
+      <%= image_tag "apply.png", class: "icon" %>
+      <div class="info">
+        <h4>Apply</h4>
+        <p>Apply to the events you want and create a profile to stand out from the rest</p>
+      </div>
+    </div>
+    <div class="profileStep">
+      <div class="connect"></div>
+      <div class="circle-number">3</div>
+      <%= image_tag "volunteer.png", class: "icon" %>
+      <div class="info">
+        <h4>审核志愿者</h4>
+        <p>寻找最适合您活动的志愿者</p>
+      </div>
+    </div>
+  </div>
+  <% unless current_user %>
+    <div class="SignUp" style="background-image: linear-gradient(-225deg, rgba(0, 168, 21, 0.6) 0%, rgba(0, 61, 2, 0.6) 50%), url('<%= image_path "together2.jpg" %>'); height: 130px;">
+      <div class="signup-content">
+        <h2>Sign Up Now & Start Creating Now!</h2>
+        <%= link_to t(".sign_in", default: "Sign Up"), new_user_registration_path, class: "btn btn-default" %>
+      </div>
+    </div>
+  <% end %>
+</div>

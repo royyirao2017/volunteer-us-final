@@ -11,16 +11,15 @@ body {
   font-family:sans-serif;
 }
 
-.homepage-bottom {
+.bottom-extra {
   padding: 30px 0;
   margin-bottom: 60px;
+  border-top: dashed;
 
   .profile-title {
     margin-bottom: 60px;
   }
 }
-
-
 
 .profileSteps {
   display: flex;
@@ -35,13 +34,12 @@ body {
   background-color: white;
   margin-right: 40px;
 }
-.profileSteps .connect {
+.profileStep .connect {
   position:absolute;
-  top:10px;
-  left:0;
+  top:10px;left:0;
   width:337px;
   height:10px;
-  margin-left: 5px;
+  margin-left:-5px;
   background-color:#2DB94D;
   border-radius:5px;
 }
@@ -49,8 +47,7 @@ body {
   position:absolute;
   top:0;
   left:0;
-  width:30px;
-  height:30px;
+  width:30px;height:30px;
   background-color:#2DB94D;
   border-radius:15px;
   color:white;
@@ -70,7 +67,25 @@ body {
     color: grey;
   }
 }
-.profileStep .profileStepOne {
+.profileStepOne {
   border-right-style: dotted;
   border-right-color: #2DB94D;
+}
+
+.SignUp {
+  height: 30%;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  color: white;
+  text-align: center;
+}
+
+.SignUp h2 {
+  padding-top: 16px;
+  color: white;
+}
+
+.SignUp .btn-default {
+  color: #2DB94D;
+  font-weight: bold;
 }
