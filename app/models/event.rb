@@ -17,6 +17,18 @@ class Event < ApplicationRecord
       id: "sports",
       name: "运动健身"
     }
+    {
+      id: "sharing event",
+      name: "交流会"
+    }
+    {
+      id: "cars"
+      name: "汽车"
+    }
+    {
+      id: "career"
+      name: "职场"
+    }
   ]
   CATEGORY_IDS = CATEGORY_MAP.map { |category_item| category_item[:name] }
 
