@@ -13,7 +13,7 @@ set :deploy_to, @root_path
 # set :repository, 'https://github.com/kwnath/seeme.git'
 
 # set :branch, 'master'
-set :branch, 'seed'
+set :branch, 'master'
 
 set :rsync_options, %w[
   --recursive --delete --delete-excluded
