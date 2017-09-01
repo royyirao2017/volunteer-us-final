@@ -26,6 +26,10 @@ class Event < ApplicationRecord
       name: "汽车"
     }
     {
+      id: "home and lifestyle"
+      name: "时尚生活"
+    }
+    {
       id: "career"
       name: "职场"
     }
