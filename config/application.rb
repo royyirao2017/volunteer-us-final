@@ -16,12 +16,17 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# set the time zone
+
+
 module VolunteerUsFinal
   class Application < Rails::Application
     config.generators do |generate|
       generate.assets false
       generate.helper false
     end
+    config.time_zone = 'Beijing'
+    config.active_record.default_timezone = :local
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

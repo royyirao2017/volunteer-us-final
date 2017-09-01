@@ -42,7 +42,7 @@
               <% @volunteer_applications.each do |volunteer_application| %>
                 <tr>
                   <td>
-                    <%= volunteer_application.created_at %>
+                    <%= volunteer_application.created_at.strftime("%b %d %I:%M%P") %>
                   </td>
                   <td>
                     <%= volunteer_application.name %>
