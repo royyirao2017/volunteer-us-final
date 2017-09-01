@@ -38,16 +38,16 @@ user_3 = User.create!({
   })
 
 event = Event.create!({
-  title: "Coding Meet Up September Edition",
+  title: "AISN国际志愿者第一批招募通知",
   date: Date.today + 1.month,
-  location: "Chengdu",
-  volunteer_number: 19,
+  location: "成都",
+  volunteer_number: 20,
   user_id: user_2.id,
   category: "科技创业",
-  poster: "http://placehold.it/300x200",
-  description: "Learn how to code like the best, from the best",
-  volunteer_duties: "Be the rubber ducky",
-  volunteer_perks: "Free t-shirt and tote bag for all volunteers",
+  poster: "https://mmbiz.qpic.cn/mmbiz_png/FphNoXG2DK4icfOh782agewd10hnUm8AmYfxC3HX5KTtjibr5R0ibVIYQm8cIULmLzv1ia67CxsWI6ia8vRzfTn6Ymw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1",
+  description: "AISNCHINA， “AISN ”谐音“爱上”，寓意 “爱上中国”。我们致力于推动中外多元文化交流，让中国的文化走向世界，他国文化走进中国。我们邀请中国热衷于文化交流的年轻人，全球的文化大使和中国当地的外国友人，加入AISN举办的多种形式的文化交流活动。",
+  volunteer_duties: "（一）摄影：1、每周二AISN团队的外国文化大使会探索中国地道美食，并采访美食背后创业者的故事。你将作为摄影师参与视频拍摄及编辑。（设备要求：高清像素手机、DV、或单反等，如果没有设备我们将提供摄影设备）2、每周日拍摄主题视频，活动形式不限，主要让中外友人体验多国文化差异。例如街头采访测试、专访故事人物、体验中国传统民俗等等。（二）文化交流活动策划：1、每周二的“吃货 sos”节目，协助AISN团队进行策划，带领外国友人了解中国地道美食，并探索美食背后创业者的故事。你将负责拍摄选址（协助或主导）、语言翻译、路线向导的工作 2、每周日的“Walkabout”节目，带外国友人深入了解中国文化、体验中外文化差异。你将负责该活动的策划（协助或主导）、语言翻译、路线向导工作",
+  volunteer_perks: "志愿者证书，实践证明，免费参加AISN组织的户内外文化交流活动，2018年初作为国际志愿者与AISN团队前往俄罗斯的机会",
   featured: false
   })
 
@@ -109,16 +109,16 @@ Event.create!({
 })
 
 Event.create!({
- title: "Startup Weekend",
+ title: "成都创业周末",
  date: Date.today + 12.month,
- location: "Walnut, Chengdu",
+ location: "氪空间，成都",
  volunteer_number: 20,
  user_id: user.id,
- category: "健康医疗",
+ category: "科技创业",
  poster: "http://www.chengdu-expat.com/wp-content/uploads/2016/09/120716_Startup-Weekend-Logo-Green.png",
- description: "One place for everything startup in Chengdu - get involved in the Chengdu startup community, find Chengdu startup events, and discover startup resources.",
- volunteer_duties: "Helping participants getting registered, being teaching aids to teachers at the event, making sure participants and teachers have lunch and dinner",
- volunteer_perks: "network opportunities, t-shirt, lunch",
+ description: "创业周末是一个为技术和非技术创业者们提供体验式教育而设计的活动。活动总共54小时，从周五晚上创业点子分享 (pitch)、头脑风暴到周六周日两天的商业模式创立、产品雏形设计和营销方案确立，再到星期天晚上的路演。通过这紧凑的54个小时，参与者共同分享经验，组成团队，并将创业点子转化为一个小的可行的产品，最终可能成立自己的团队和新的公司。所有团队可在行业专家和当地企业家面前展示他们的创建成果，并且得到切实诚恳的评判和反馈。创业周末始终围绕着行动，创新和教育。无论您是想来验证自己的创业想法，寻找创业道路上的伙伴、学习新的创业技巧和经验或者真真实实地找寻团队开始你自己的事业，选择“创业周末”绝对没有错! ",
+ volunteer_duties: "英文组：口语过关，有基本的口译能力. 摄影组：有活动拍摄经验.会务组：负责现场协调工作.",
+ volunteer_perks: "志愿者证书，实践证明，免费的午餐和晚餐。",
  featured: false
 })
 

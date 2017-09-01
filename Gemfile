@@ -8,6 +8,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
+gem 'rails-i18n', '~> 5.0.0' # For 5.0.x and 5.1.x
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

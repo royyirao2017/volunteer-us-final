@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container tab-space">
   <div class="main-content-container">
     <div>
 
@@ -6,6 +6,7 @@
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">志愿者状态</a></li>
         <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">活动内容</a></li>
+        <li role="presentation"><a href="#qr-code" aria-controls="qr-code" role="tab" data-toggle="tab">活动二维码</a></li>
       </ul>
 
       <!-- Tab panes -->
@@ -13,9 +14,6 @@
         <div role="tabpanel" class="tab-pane fade in active" id="home">
           <table class="table">
             <thead>
-              <div class="event__qr-code">
-                <img src="/<%= @qr_code_file_path %>">
-              </div>
               <tr>
                 <th>
                  申请时间
@@ -91,7 +89,7 @@
                 </div>
               </div>
             </div>
-            <h3>你目前还没有志愿者哦</h3>
+            <h4>你目前还没有志愿者哦</h4>
           <% end %>
 
 
@@ -138,10 +136,16 @@
           </div>
 
         </div>
+
+        <div role="tabpanel" class="tab-pane fade in" id="qr-code">
+          <div class="event__qr-code">
+             <img src="/<%= @qr_code_file_path %>">
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="text-center">
+    <div class="text-center back-button">
       <%= link_to "返回个人页面", dashboard_index_path, class: 'btn btn-default' %>
     </div>
   </div>
