@@ -48,7 +48,7 @@ class EventsController < ApplicationController
 
         puts "save @event #{@event.errors.inspect}"
 
-        redirect_to event_path(@event), notice: '<i class="fa fa-weixin"></i> Scan the QR code, then share the event page on WeChat to find volunteers'
+        redirect_to event_path(@event), notice: '<i class="fa fa-weixin"></i> 扫活动生成二维码，分享到朋友圈招募志愿者'
       else
 
         puts "failed @event #{@event.errors.inspect}"

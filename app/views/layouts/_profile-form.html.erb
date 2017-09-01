@@ -4,10 +4,10 @@
     <div class="col-xs-12">
       <%= simple_form_for @profile, url:profile_path, method: :put do |f|%>
         <div class="form-inputs">
-          <%= f.input :name %>
-          <%= f.input :phone_number%>
-          <%= f.input :email %>
-          <%= f.input :location %>
+          <%= f.input :name, label: "用户昵称" %>
+          <%= f.input :phone_number, label: "手机号码" %>
+          <%= f.input :email, label:"电子邮箱" %>
+          <%= f.input :location, label: "所在城市"  %>
         </div>
         <div class="form-actions text-center">
           <%= f.button :submit, "保存修改",class: "btn btn-default btn-md", style:"color: #2DB94D ; font-weight: bold; width: 40%; margin-top: -30px;" %>

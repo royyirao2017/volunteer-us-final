@@ -37,8 +37,8 @@
   <% unless current_user %>
     <div class="SignUp" style="background-image: url('<%= image_path "desk.png" %>'); height: 130px;">
       <div class="signup-content">
-        <h2>Sign Up Now & Start Creating Now!</h2>
-        <%= link_to t(".sign_in", default: "Sign Up"), new_user_registration_path, class: "btn btn-default" %>
+        <h2>创建活动 一起共创</h2>
+        <%= link_to t(".sign_in", default: "组织者注册"), new_user_registration_path, class: "btn btn-default" %>
       </div>
     </div>
   <% end %>
