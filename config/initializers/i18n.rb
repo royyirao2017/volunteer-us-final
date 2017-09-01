@@ -1,1 +1,2 @@
-I18n.default_locale = 'zh-CN'
+I18n.locale = 'zh-CN'
+
