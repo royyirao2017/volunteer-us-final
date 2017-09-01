@@ -72,7 +72,7 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h3 class="modal-title">没志愿者！在微信上分享下面的二维码吧</h3>
+                      <h3 class="modal-title">在微信上分享下面的二维码吧</h3>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -108,13 +108,13 @@
 
             <div class="col-md-6">
               <div class="event-basic">
-                <p>活动时间: <%= @event.date %></p>
-                <p>活动地点: <%= @event.location %></p>
+                <p><span class="event-basic-label">活动时间</span>: <%= @event.date %></p>
+                <p><span class="event-basic-label">活动地点</span>: <%= @event.location %></p>
 
                 <!-- CSS needed in the event show page -->
-                <p>活动种类: <%= @event.category.capitalize %></p>
-                <p>志愿者人数: <%= @event.volunteer_number %></p>
-                <p>组织者: <%= @event.user.try(:name) %></p>
+                <p><span class="event-basic-label">活动种类</span>: <%= @event.category.capitalize %></p>
+                <p><span class="event-basic-label">志愿者人数</span>: <%= @event.volunteer_number %></p>
+                <p><span class="event-basic-label">组织者</span>: <%= @event.user.try(:name) %></p>
               </div>
             </div>
           </div>
@@ -123,9 +123,9 @@
           <div class="row">
             <div class="col-md-12">
               <div class="event-details">
-                <p>活动详细内容: <%= @event.description %></p>
-                <p>志愿者义务: <%= @event.volunteer_duties %></p>
-                <p>志愿者福利: <%= @event.volunteer_perks %></p>
+                <p><span class="event-basic-label">活动详细内容</span>: <%= @event.description %></p>
+                <p><span class="event-basic-label">志愿者义务</span>: <%= @event.volunteer_duties %></p>
+                <p><span class="event-basic-label">志愿者福利</span>: <%= @event.volunteer_perks %></p>
               </div>
 
               <div class="action-buttons">
