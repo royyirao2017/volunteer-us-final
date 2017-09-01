@@ -42,7 +42,7 @@
               <% @volunteer_applications.each do |volunteer_application| %>
                 <tr>
                   <td>
-                    <%= volunteer_application.created_at %>
+                    <%= volunteer_application.created_at.strftime("%b %d %I:%M%P") %>
                   </td>
                   <td>
                     <%= volunteer_application.name %>
@@ -68,9 +68,12 @@
               <% end %>
             </tbody>
           </table>
-          <div class="volunteer-default">
-          <p>你目前还没有志愿者哦</p>
-          </div>
+
+          <% if @volunteer_applications.empty? %>
+            <div class="volunteer-default">
+            <h2>你目前还没有志愿者哦</h2>
+            </div>
+          <% end %>
         </div>
 
         <div role="tabpanel" class="tab-pane fade" id="profile">

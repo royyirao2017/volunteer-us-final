@@ -8,9 +8,10 @@
 
 VolunteerApplication.delete_all
 Event.delete_all
+User.delete_all
 
 user = User.create!({
-  email: "billgates@volunteerus.com",
+  email: "dengel29@gmail.com",
   password: "123123",
   name: "Bill Gates",
   phone_number: '12345678',
@@ -19,7 +20,7 @@ user = User.create!({
   })
 
 user_2 = User.create!({
-  email: "ssnape@volunteerus.com",
+  email: "snape2@volunteerus.com",
   password: "123123",
   name: "Severus Snape",
   phone_number: "90909090909",
@@ -28,7 +29,7 @@ user_2 = User.create!({
   })
 
 user_3 = User.create!({
-  email: "dumble@volunteerus.com",
+  email: "d_umble3@volunteerus.com",
   password: "123123",
   name: "Dumble Dore",
   phone_number: "90909090909",
@@ -41,13 +42,13 @@ event = Event.create!({
   date: Date.today + 1.month,
   location: "Chengdu",
   volunteer_number: 19,
-  user_id: user.id,
+  user_id: user_2.id,
   category: "科技创业",
   poster: "http://placehold.it/300x200",
   description: "Learn how to code like the best, from the best",
   volunteer_duties: "Be the rubber ducky",
   volunteer_perks: "Free t-shirt and tote bag for all volunteers",
-  featured: true
+  featured: false
   })
 
 Event.create!({
@@ -55,28 +56,15 @@ Event.create!({
   date: Date.today + 1.month,
   location: "Paris",
   volunteer_number: 19,
-  user_id: user.id,
+  user_id: user_2.id,
   category: "健康医疗",
   poster: "http://www.altoonaumc.org/wp-content/uploads/2014/03/Palm-Sunday-slider-399x180.png",
   description: "A Palm Day Celebration",
   volunteer_duties: "Keep the guests happy, distracted from the mundanity of life!",
   volunteer_perks: "Free food and drink",
-  featured: false
+  featured: true
 })
 
-Event.create!({
-  title: "Alcoholics Anonymous",
-  date: Date.today + 1.month,
-  location: "Paris",
-  volunteer_number: 19,
-  user_id: user.id,
-  category: "健康医疗",
-  poster: "http://placehold.it/300x200",
-  description: "Bill Gates wants to teach you how to give up booze",
-  volunteer_duties: "Don't let them drink",
-  volunteer_perks: "You get to drink",
-  featured: false
-})
 
 Event.create!({
   title: "Social Impact: Lunch and Learn",
@@ -92,13 +80,13 @@ Event.create!({
   featured: true
 })
 
-Event.create({
+Event.create!({
  title: "World Cancer Day",
  date: Date.today + 6.month,
  location: "SBC TianFu XinGu, Chengdu",
  volunteer_number: 20,
  user_id: user.id,
- category: "healthcare",
+ category: "健康医疗",
  poster: "http://www.cancerresearchuk.org/sites/default/files/world-cancer-day-header-medium.png",
  description: "We are spreading awareness to the global cancer research done. Showing what projects and opportunities are available here in Chengdu and across the world.",
  volunteer_duties: "Volunteers will be doing ushering, setting up and cleaning up. Also help out vendors at the event.",
@@ -106,21 +94,21 @@ Event.create({
  featured: false
 })
 
-Event.create({
+Event.create!({
  title: "CollegeBoard USA",
  date: Date.today + 8.month,
  location: "Walnut, Chengdu",
  volunteer_number: 50,
  user_id: user.id,
  category: "健康医疗",
- poster: "http://az616578.vo.msecnd.net/files/2016/05/14/6359879551089627791744389225_collegeboard.png (102kB)",
+ poster: "http://az616578.vo.msecnd.net/files/2016/05/14/6359879551089627791744389225_collegeboard.png",
  description: "CollegeBoard is hosting an event introducing Chinese and International students living in Chengdu to recruiters from over 60 US Colleges.",
  volunteer_duties: "Helping recruiters with talking to students and parents (translating), handing out leaflets, helping recruiters get their lunch and anything they need, ushering students and giving name tags and goodie bags",
  volunteer_perks: " College merchandise, network opportunities, t-shirt, lunch",
  featured: false
 })
 
-Event.create({
+Event.create!({
  title: "Startup Weekend",
  date: Date.today + 12.month,
  location: "Walnut, Chengdu",
