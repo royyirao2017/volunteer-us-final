@@ -1,7 +1,4 @@
 <div class="container">
-  <div class="event__qr-code">
-    <img src="/<%= @qr_code_file_path %>">
-  </div>
   <div class="main-content-container">
     <div>
 
@@ -16,6 +13,9 @@
         <div role="tabpanel" class="tab-pane fade in active" id="home">
           <table class="table">
             <thead>
+              <div class="event__qr-code">
+                <img src="/<%= @qr_code_file_path %>">
+              </div>
               <tr>
                 <th>
                  申请时间
@@ -68,12 +68,35 @@
               <% end %>
             </tbody>
           </table>
-
           <% if @volunteer_applications.empty? %>
             <div class="volunteer-default">
-            <h2>你目前还没有志愿者哦</h2>
+              <div class="modal fade" id="modal-event-show-qr-code">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title">没志愿者！在微信上分享下面的二维码吧</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="event__qr-code">
+                        <img src="/<%= @qr_code_file_path %>">
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <h3>你目前还没有志愿者哦</h3>
           <% end %>
+
+
+
+
         </div>
 
         <div role="tabpanel" class="tab-pane fade" id="profile">
@@ -123,3 +146,9 @@
     </div>
   </div>
 </div>
+
+<% content_for(:inline_javascript) do %>
+  <script>
+    $('#modal-event-show-qr-code').modal({});
+  </script>
+<% end %>
