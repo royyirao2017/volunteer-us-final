@@ -18,7 +18,11 @@
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application' %>
+
+    <%= content_for(:inline_javascript) %>
+
     <%= render "pages/footer" %>
+
     <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
     </div>
   </body>
