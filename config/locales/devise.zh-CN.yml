@@ -1,0 +1,10 @@
+zh-CN:
+  devise:
+    failure:
+      invalid: "用户名／用户密码不正确"
+      not_found_in_database: "用户名／用户密码不正确"
+    sessions:
+      signed_in: "登录成功"
+      signed_out: "退出成功"
+      already_signed_out: "退出成功"
+
