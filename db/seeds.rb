@@ -44,8 +44,7 @@ event = Event.create!({
   volunteer_number: 20,
   user_id: user_2.id,
   category: "科技创业",
-  poster: "https://mmbiz.qpic.cn/mmbiz_png/FphNoXG2DK4icfOh782agewd10hnUm8AmYfxC3HX5KTtjibr5R0ibVIYQm8cIULmLzv1ia67CxsWI6ia8vRzfTn6Ymw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1",
-  description: "AISNCHINA， “AISN ”谐音“爱上”，寓意 “爱上中国”。我们致力于推动中外多元文化交流，让中国的文化走向世界，他国文化走进中国。我们邀请中国热衷于文化交流的年轻人，全球的文化大使和中国当地的外国友人，加入AISN举办的多种形式的文化交流活动。",
+  poster: "https://static.pexels.com/photos/296878/pexels-photo-296878.jpeg",
   volunteer_duties: "（一）摄影：1、每周二AISN团队的外国文化大使会探索中国地道美食，并采访美食背后创业者的故事。你将作为摄影师参与视频拍摄及编辑。（设备要求：高清像素手机、DV、或单反等，如果没有设备我们将提供摄影设备）2、每周日拍摄主题视频，活动形式不限，主要让中外友人体验多国文化差异。例如街头采访测试、专访故事人物、体验中国传统民俗等等。（二）文化交流活动策划：1、每周二的“吃货 sos”节目，协助AISN团队进行策划，带领外国友人了解中国地道美食，并探索美食背后创业者的故事。你将负责拍摄选址（协助或主导）、语言翻译、路线向导的工作 2、每周日的“Walkabout”节目，带外国友人深入了解中国文化、体验中外文化差异。你将负责该活动的策划（协助或主导）、语言翻译、路线向导工作",
   volunteer_perks: "志愿者证书，实践证明，免费参加AISN组织的户内外文化交流活动，2018年初作为国际志愿者与AISN团队前往俄罗斯的机会",
   featured: false
