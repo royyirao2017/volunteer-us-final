@@ -16,21 +16,21 @@ class Event < ApplicationRecord
     {
       id: "sports",
       name: "运动健身"
-    }
+    },
     {
       id: "sharing event",
       name: "交流会"
-    }
+    },
     {
-      id: "cars"
+      id: "cars",
       name: "汽车"
-    }
+    },
     {
-      id: "home and lifestyle"
+      id: "home and lifestyle",
       name: "时尚生活"
-    }
+    },
     {
-      id: "career"
+      id: "career",
       name: "职场"
     }
   ]
